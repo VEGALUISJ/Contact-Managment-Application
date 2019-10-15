@@ -35,14 +35,14 @@ class Modal extends React.Component {
 							)}
 						</div>
 						<div className="modal-body">
-							<p>Warning: unknown consequences after this point... Kidding!</p>
+							<p>If you delete this, universe complete will go down...Are you sure?</p>
 						</div>
 						<div className="modal-footer">
 							<button type="button" className="btn btn-primary">
-								Oh no!
+								Oh no please!
 							</button>
 							<button type="button" className="btn btn-secondary" data-dismiss="modal">
-								Do it!
+								Yes Baby!
 							</button>
 						</div>
 					</div>
