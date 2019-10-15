@@ -8,11 +8,22 @@ export default class Contacts extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			showModal: false
+			showModal: false,
+			contact: []
 		};
 	}
 
+	UNSAFE_componentWillMount() {
+		const contacto = JSON.parse(localStorage.getItem("contact"));
+		if (contacto == null) {
+			this.setState({ contact: [] });
+		} else {
+			this.setState({ contact: contacto });
+		}
+	}
+
 	render() {
+		console.log(this.state.contact);
 		return (
 			<div className="container">
 				<div>
@@ -23,10 +34,17 @@ export default class Contacts extends React.Component {
 					</p>
 					<div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
 						<ul className="list-group pull-down" id="contact-list">
-							<ContactCard onDelete={() => this.setState({ showModal: true })} />
-							<ContactCard />
-							<ContactCard />
-							<ContactCard />
+							{this.state.contact.map((item, ind) => (
+								<ContactCard
+									onDelete={() => this.setState({ showModal: true })}
+									key={ind}
+									id={ind}
+									name={item.name}
+									email={item.email}
+									phone={item.phone}
+									adress={item.adress}
+								/>
+							))}
 						</ul>
 					</div>
 				</div>
