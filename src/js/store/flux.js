@@ -1,7 +1,23 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			//Your data structures, A.K.A Entities
+			contacts: [
+				{
+					id: 1,
+					full_name: "",
+					email: "",
+					phone: "",
+					address: ""
+				},
+
+				{
+					id: 2,
+					full_name: "",
+					email: "",
+					phone: "",
+					address: ""
+				}
+			]
 		},
 		actions: {
 			//(Arrow) Functions that update the Store

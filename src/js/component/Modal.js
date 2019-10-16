@@ -38,7 +38,7 @@ class Modal extends React.Component {
 							<p>If you delete this, universe complete will go down...Are you sure?</p>
 						</div>
 						<div className="modal-footer">
-							<button type="button" className="btn btn-primary">
+							<button type="button" onClick={() => this.props.onClose()} className="btn btn-primary">
 								Oh no please!
 							</button>
 							<button type="button" className="btn btn-secondary" data-dismiss="modal">
